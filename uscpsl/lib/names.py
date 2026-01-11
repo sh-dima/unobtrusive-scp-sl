@@ -6,10 +6,15 @@ def get_names(directory: str) -> dict[str, str]:
 	names_file = get_file(directory, "Class_Names.txt")
 	names_list = list(map(lambda n: n.strip(), names_file.splitlines()))
 
+	items_file = get_file(directory, "Items.txt")
+	items_list = list(map(lambda i: i.strip().split("~"), items_file.splitlines()))
+
 	names["49"] = names_list[5]
 	names["49-2"] = names_list[10]
 	names["96"] = names_list[9]
 	names["173"] = names_list[0]
 	names["939"] = names_list[16]
+
+	names["207"] = items_list[18][1]
 
 	return names
