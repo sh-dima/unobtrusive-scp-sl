@@ -2,6 +2,8 @@ import os
 import logging
 import json
 
+from uscpsl.lib.names import get_names
+
 from uscpsl.lib.preprocess import preprocess
 from uscpsl.lib.clarify_deaths import clarify_deaths
 
@@ -26,10 +28,12 @@ def remap(directory: str):
 
 		with open(f"{directory}/{file}", "w") as f:
 			f.write(preprocess(text))
+
+	names = get_names(directory)
 	
 	if os.path.exists(f"{directory}/DeathReasons.txt"):
 		with open(f"{directory}/DeathReasons.txt") as f:
 			deaths = f.read()
 
 		with open(f"{directory}/DeathReasons.txt", "w") as f:
-			f.write(clarify_deaths(deaths))
+			f.write(clarify_deaths(deaths, names))
