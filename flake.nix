@@ -1,5 +1,5 @@
 {
-  description = "A template Python package";
+  description = "A script that updates SCP:SL translations to be unobtrusive.";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-25.11";
@@ -13,7 +13,7 @@
       revision = self.shortRev or self.dirtyShortRev or "unknown";
     in {
       packages.default = pkgs.python3Packages.buildPythonPackage {
-        pname = "template";
+        pname = "uscpsl";
         version = revision;
         src = ./.;
 
@@ -36,7 +36,7 @@
         '';
 
         meta = with pkgs.lib; {
-          description = "A template Python package";
+          description = "A script that updates SCP:SL translations to be unobtrusive.";
           license = licenses.agpl3Only;
         };
       };

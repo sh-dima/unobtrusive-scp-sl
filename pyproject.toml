@@ -2,33 +2,33 @@
 requires = ["setuptools", "wheel"]
 
 [project]
-name = "template"
+name = "uscpsl"
 version = "0.1.0"
-description = "A template Python package"
+description = "A script that updates SCP:SL translations to be unobtrusive"
 readme = "README.md"
 requires-python = ">=3.13.9"
 license = "AGPL-3.0-only"
 license-files = ["LICENSE"]
 authors = [
-  { name = "Author", email = "author@example.org" },
+  { name = "Дима Ш.", email = "dima.o.sh@proton.me" },
 ]
 
 dependencies = [
 ]
 
 [project.urls]
-"Source" = "https://gitlab.com/-/p/75750085"
-"Bug Reports" = "https://gitlab.com/esoteric-templates/templates/template-python-package/-/issues"
+"Source" = "https://gitlab.com/-/p/77613771"
+"Bug Reports" = "https://gitlab.com/shdima/unobtrusive-scp-sl/-/issues"
 
-# [project.scripts]
-# template = "template.__main__:main"
+[project.scripts]
+uscpsl = "uscpsl.__main__:main"
 
 [tool.setuptools]
-packages = { find = { include = ["template*"] } }
+packages = { find = { include = ["uscpsl*"] } }
 include-package-data = true
 
 [tool.setuptools.package-data]
-"template" = ["assets/**/*"]
+"uscpsl" = ["assets/**/*"]
 
 [tool.pytest.ini_options]
 testpaths = ["tests"]
