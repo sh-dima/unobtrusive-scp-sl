@@ -12,9 +12,12 @@ def get_names(directory: str) -> dict[str, str]:
 	names["49"] = names_list[5]
 	names["49-2"] = names_list[10]
 	names["96"] = names_list[9]
+	names["106"] = names_list[3]
 	names["173"] = names_list[0]
 	names["939"] = names_list[16]
 
+	names["127"] = items_list[56][1]
 	names["207"] = items_list[18][1]
+	names["1509"] = items_list[57][1]
 
 	return names
