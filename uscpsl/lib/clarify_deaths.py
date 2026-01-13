@@ -10,6 +10,7 @@ def clarify_deaths(deaths: str, names: dict[str, str]) -> str:
 	lines[22] = names["173"]
 	lines[23] = names["939"]
 	lines[24] = names["49-2"] + " / " + names["1507"] + " / " + names["3114"]
+	lines[32] = names["939"]
 	lines[34] = names["127"]
 	lines[35] = names["1509"]
 	return "\n".join(lines)
