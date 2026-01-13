@@ -1,7 +1,7 @@
 def clarify_deaths(deaths: str, names: dict[str, str]) -> str:
 	lines = deaths.splitlines()
 	lines[0] = "<b>[user]</b> - [class]\\n\\n💀 [cause]"
-	lines[3] = names["49"]
+	lines[3] = names["49"] + " / " + names["3114"]
 	lines[11] = names["106"]
 	lines[15] = names["207"]
 	lines[18] = "⚡"
