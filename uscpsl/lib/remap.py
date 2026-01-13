@@ -27,7 +27,7 @@ def remap(directory: str):
 			text = f.read()
 
 		with open(f"{directory}/{file}", "w") as f:
-			f.write(preprocess(directory, text))
+			f.write(preprocess(directory, f.name, text))
 
 	names = get_names(directory)
 	
