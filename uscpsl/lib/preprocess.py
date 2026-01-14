@@ -13,4 +13,9 @@ def preprocess(directory: str, name: str, text: str) -> str:
 		lines[2] = ""
 		text = "\n".join(lines)
 
+	if name.endswith("Class_Descriptions.txt"):
+		lines = text.splitlines()
+		lines = ["" for line in lines]
+		text = "\n".join(lines)
+
 	return text
