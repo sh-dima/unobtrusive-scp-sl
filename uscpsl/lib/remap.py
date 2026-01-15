@@ -24,11 +24,15 @@ def remap(directory: str):
 	logging.debug(f"Preprocessing {len(files)} files in directory {directory}:")
 
 	for file in files:
-		with open(f"{directory}/{file}") as f:
-			text = f.read()
+		try:
+			with open(f"{directory}/{file}") as f:
+				text = f.read()
 
-		with open(f"{directory}/{file}", "w") as f:
-			f.write(preprocess(directory, f.name, text))
+			with open(f"{directory}/{file}", "w") as f:
+				f.write(preprocess(directory, f.name, text))
+		except:
+			logging.error(f"Failed to preprocess file {file}")
+			exit(1)
 
 	names = get_names(directory)
 	
