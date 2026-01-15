@@ -18,4 +18,9 @@ def preprocess(directory: str, name: str, text: str) -> str:
 		lines = ["" for line in lines]
 		text = "\n".join(lines)
 
+	if name.endswith("HumanBio.txt"):
+		lines = text.splitlines()
+		lines = ["" for line in lines]
+		text = "\n".join(lines)
+
 	return text
