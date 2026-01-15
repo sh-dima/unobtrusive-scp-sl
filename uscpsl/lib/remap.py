@@ -6,6 +6,7 @@ from uscpsl.lib.names import get_names
 
 from uscpsl.lib.preprocess import preprocess
 from uscpsl.lib.clarify_deaths import clarify_deaths
+from uscpsl.lib.update_facility import update_facility
 
 def remap(directory: str):
 	files = os.listdir(directory)
@@ -37,3 +38,10 @@ def remap(directory: str):
 
 		with open(f"{directory}/DeathReasons.txt", "w") as f:
 			f.write(clarify_deaths(deaths, names))
+
+	if os.path.exists(f"{directory}/Facility.txt"):
+		with open(f"{directory}/Facility.txt") as f:
+			facility = f.read()
+
+		with open(f"{directory}/Facility.txt", "w") as f:
+			f.write(update_facility(facility, names))
