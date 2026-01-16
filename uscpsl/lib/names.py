@@ -6,6 +6,9 @@ def get_names(directory: str) -> dict[str, str]:
 	names_file = get_file(directory, "Class_Names.txt")
 	names_list = list(map(lambda n: n.strip(), names_file.splitlines()))
 
+	teams_file = get_file(directory, "Teams.txt")
+	teams_list = list(map(lambda n: n.strip(), teams_file.splitlines()))
+
 	items_file = get_file(directory, "Items.txt")
 	items_list = list(map(lambda i: i.strip().split("~"), items_file.splitlines()))
 
@@ -21,5 +24,7 @@ def get_names(directory: str) -> dict[str, str]:
 	names["127"] = items_list[56][1]
 	names["207"] = items_list[18][1]
 	names["1509"] = items_list[57][1]
+
+	names["chaos"] = teams_list[2]
 
 	return names
