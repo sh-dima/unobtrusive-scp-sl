@@ -8,19 +8,19 @@ def preprocess(directory: str, name: str, text: str) -> str:
 
 	if name.endswith("Legacy_Interfaces.txt"):
 		lines = text.splitlines()
-		lines[0] = ""
-		lines[1] = ""
-		lines[2] = ""
+		lines[0] = "ㅤ"
+		lines[1] = "ㅤ"
+		lines[2] = "ㅤ"
 		text = "\n".join(lines)
 
 	if name.endswith("Class_Descriptions.txt"):
 		lines = text.splitlines()
-		lines = ["" for line in lines]
+		lines = ["ㅤ" for line in lines]
 		text = "\n".join(lines)
 
 	if name.endswith("HumanBio.txt"):
 		lines = text.splitlines()
-		lines = ["" for line in lines]
+		lines = ["ㅤ" for line in lines]
 		text = "\n".join(lines)
 
 	return text
