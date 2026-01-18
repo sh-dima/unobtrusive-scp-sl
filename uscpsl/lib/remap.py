@@ -8,6 +8,7 @@ from uscpsl.lib.preprocess import preprocess
 from uscpsl.lib.clarify_deaths import clarify_deaths
 from uscpsl.lib.update_facility import update_facility
 from uscpsl.lib.update_subtitles import update_subtitles
+from uscpsl.lib.remove_descriptions import remove_descriptions
 
 def remap(directory: str):
 	files = os.listdir(directory)
@@ -57,3 +58,10 @@ def remap(directory: str):
 
 		with open(f"{directory}/Subtitles.txt", "w") as f:
 			f.write(update_subtitles(subtitles, names))
+
+	if os.path.exists(f"{directory}/Items.txt"):
+		with open(f"{directory}/Items.txt") as f:
+			items = f.read()
+
+		with open(f"{directory}/Items.txt", "w") as f:
+			f.write(remove_descriptions(items, names))
