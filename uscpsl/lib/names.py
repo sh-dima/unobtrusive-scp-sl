@@ -26,5 +26,6 @@ def get_names(directory: str) -> dict[str, str]:
 	names["1509"] = items_list[57][1]
 
 	names["chaos"] = teams_list[2]
+	names["scps"] = teams_list[0]
 
 	return names
