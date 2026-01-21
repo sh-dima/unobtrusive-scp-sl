@@ -9,6 +9,7 @@ from uscpsl.lib.clarify_deaths import clarify_deaths
 from uscpsl.lib.update_facility import update_facility
 from uscpsl.lib.update_subtitles import update_subtitles
 from uscpsl.lib.remove_descriptions import remove_descriptions
+from uscpsl.lib.colorize_classes import colorize_classes
 
 def remap(directory: str):
 	files = os.listdir(directory)
@@ -65,3 +66,10 @@ def remap(directory: str):
 
 		with open(f"{directory}/Items.txt", "w") as f:
 			f.write(remove_descriptions(items, names))
+
+	if os.path.exists(f"{directory}/Class_Names.txt"):
+		with open(f"{directory}/Class_Names.txt") as f:
+			classes = f.read()
+
+		with open(f"{directory}/Class_Names.txt", "w") as f:
+			f.write(colorize_classes(classes, names))
