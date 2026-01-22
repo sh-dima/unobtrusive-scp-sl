@@ -6,6 +6,7 @@ from uscpsl.lib.names import get_names
 
 from uscpsl.lib.preprocess import preprocess
 from uscpsl.lib.clarify_deaths import clarify_deaths
+from uscpsl.lib.clarify_deaths import clarify_skeleton
 from uscpsl.lib.update_facility import update_facility
 from uscpsl.lib.update_subtitles import update_subtitles
 from uscpsl.lib.remove_descriptions import remove_descriptions
@@ -73,3 +74,10 @@ def remap(directory: str):
 
 		with open(f"{directory}/Class_Names.txt", "w") as f:
 			f.write(colorize_classes(classes, names))
+
+	if os.path.exists(f"{directory}/SCP3114_HUD.txt"):
+		with open(f"{directory}/SCP3114_HUD.txt") as f:
+			skeleton = f.read()
+
+		with open(f"{directory}/SCP3114_HUD.txt", "w") as f:
+			f.write(clarify_skeleton(skeleton, names))

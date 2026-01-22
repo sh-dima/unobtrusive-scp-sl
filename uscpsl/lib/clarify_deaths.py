@@ -14,3 +14,10 @@ def clarify_deaths(deaths: str, names: dict[str, str]) -> str:
 	lines[34] = names["127"]
 	lines[35] = names["1509"]
 	return "\n".join(lines)
+
+def clarify_skeleton(skeleton: str, names: dict[str, str]) -> str:
+	lines = skeleton.splitlines()
+
+	lines[7] = "☠️ <b>[player_name]</b>" # Unrecognizable pile of bones belongs to ...
+
+	return "\n".join(lines)
