@@ -37,7 +37,7 @@
 
         meta = with pkgs.lib; {
           description = "A script that updates SCP:SL translations to be unobtrusive.";
-          license = licenses.agpl3Only;
+          license = licenses.cc-by-sa-30;
         };
       };
 
